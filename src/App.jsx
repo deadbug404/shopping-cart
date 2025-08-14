@@ -1,4 +1,6 @@
 import { Outlet, Link, useParams } from "react-router-dom";
+import Homepage from "./routes/Homepage"
+import Shop from "./routes/Shop"
 import { useState } from "react";
 
 export default function App(){
@@ -16,7 +18,7 @@ export default function App(){
               {name === "shop" ? (<div id="cart-items">{cart.length}</div>) : null}
           </div>
       </div>
-      <Outlet/>
+      {name === "homepage" ? (<Homepage />) : (<Shop/>)}
     </div>
   )
 }
