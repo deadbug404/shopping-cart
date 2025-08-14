@@ -7,6 +7,10 @@ export default function App(){
   const [cart,addItem] = useState([]);
   const {name} = useParams();
 
+  function addItemFunc(name){
+    addItem(prev => [...prev,name]);
+  }
+
   return(
     <div>
       <div>
@@ -18,7 +22,7 @@ export default function App(){
               {name === "shop" ? (<div id="cart-items">{cart.length}</div>) : null}
           </div>
       </div>
-      {name === "homepage" ? (<Homepage />) : (<Shop/>)}
+      {name === "homepage" ? (<Homepage />) : (<Shop addItemFunc={addItemFunc} />)}
     </div>
   )
 }

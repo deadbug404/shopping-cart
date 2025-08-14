@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import getAllProducts from "../fakestoreAPI"
 
-export default function Shop(){
+export default function Shop({addItemFunc}){
     const [items, setItems] = useState([]);
 
     useEffect(()=>{
@@ -12,6 +12,14 @@ export default function Shop(){
 
     return(
         <div>
+            {
+                items.map(item => (
+                    <div key={item.title}>
+                        <p>{item.title}</p>
+                        <button onClick={()=>{addItemFunc(item.title)}}>ADD</button>
+                    </div>
+                ))
+            }
         </div>
     )
 }
