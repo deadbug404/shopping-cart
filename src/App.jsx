@@ -1,6 +1,7 @@
-import { Outlet, Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Homepage from "./routes/Homepage"
 import Shop from "./routes/Shop"
+import "./App.css";
 import { useEffect, useState } from "react";
 
 export default function App(){
@@ -27,10 +28,10 @@ export default function App(){
   },[transactionVisibility])
 
   return(
-    <div>
-      <div>
-          <h1><Link to="/homepage">Evil Corp</Link></h1>
-          <div>
+    <div id="app">
+      <div id="header">
+          <h1 className="companyName"><Link to="/homepage">E-corp</Link></h1>
+          <div id="headerLinks">
               <Link to="/shop">Shop</Link>
               <a href="">Profile</a>
               <a href="">Settings</a>
@@ -42,7 +43,9 @@ export default function App(){
               ) : null}
           </div>
       </div>
-      {name === "homepage" ? (<Homepage />) : (<Shop addItemFunc={addItemFunc} />)}
+      <div id="body">
+        {name === "homepage" ? (<Homepage />) : (<Shop addItemFunc={addItemFunc} />)}
+      </div>
       {transactionVisibility ? (<div>{transactionStatus}</div>) : null}
     </div>
   )
