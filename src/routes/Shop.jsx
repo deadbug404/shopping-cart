@@ -16,7 +16,7 @@ export default function Shop({addItemFunc}){
                 items.map(item => (
                     <div key={item.title}>
                         <p>{item.title}</p>
-                        <button onClick={()=>{addItemFunc(item.title)}}>ADD</button>
+                        <button onClick={()=>{addItemFunc(item.title)}}>Add to cart</button>
                     </div>
                 ))
             }
