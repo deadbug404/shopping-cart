@@ -9,39 +9,39 @@
 }
 
 .description{
-    max-width: 500px;
-    margin-top: 30px;
-    font-family: 'Times New Roman', Times, serif;
+  max-width: 500px;
+  margin-top: 30px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .hero{
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hero h1{
-    font-size: 50px;
+  font-size: 50px;
 }
 
 .hero > div:nth-child(1) > h2:nth-child(2){
-    color: #e7c492;
+  color: #e7c492;
 }
 
 .hero button {
-    margin-top: 30px;
-    border-radius: 4px;
-    background-color: #c43048;
-    border: none;
-    color: #fff;
-    text-align: center;
-    font-size: 22px;
-    padding: 16px;
-    width: 220px;
-    transition: all 0.5s;
-    cursor: pointer;
-    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+  margin-top: 30px;
+  border-radius: 4px;
+  background-color: #c43048;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  padding: 16px;
+  width: 220px;
+  transition: all 0.5s;
+  cursor: pointer;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
 }
 
 .hero button{
@@ -68,4 +68,21 @@
 .hero button:hover:after {
   opacity: 1;
   right: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+  #homepage{
+    justify-content: center;
+  }
+
+  #homepage::before{
+    content: "";
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background: rgba(0, 0, 0, 0.9); /* black with 50% opacity */
+  }
+  
+  .hero{
+    z-index: 1;
+  }
 }

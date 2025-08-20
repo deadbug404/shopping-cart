@@ -30,7 +30,7 @@ export default function App(){
   return(
     <div id="app">
       <div id="header">
-          <h1 className="companyName"><Link to="/homepage">E-corp</Link></h1>
+          <h1 className="companyName"><Link to="/homepage">E CORP</Link></h1>
           <div id="headerLinks">
               <Link to="/shop">Shop</Link>
               <a href="">Profile</a>
