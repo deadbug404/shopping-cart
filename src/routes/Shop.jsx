@@ -22,7 +22,7 @@ export default function Shop({addItemFunc}){
                                 <p>{item.title}</p>
                             </div>
                             <div>
-                                <button onClick={()=>{addItemFunc(item.title)}}>Add to cart     |       ${item.price}</button>
+                                <button onClick={()=>addItemFunc({name: item.title,price: item.price})}>Add to cart     |       ${item.price}</button>
                             </div>
                         </div>
                     </div>
