@@ -26,6 +26,8 @@
 
 #headerLinks{
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
 }
 
@@ -48,6 +50,13 @@
 
 #headerLinks a:hover::after {
   width: 100%;
+}
+
+#headerLinks button{
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: none;
 }
 
 .companyName a{

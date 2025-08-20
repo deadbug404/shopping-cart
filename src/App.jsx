@@ -33,13 +33,8 @@ export default function App(){
           <h1 className="companyName"><Link to="/homepage">E CORP</Link></h1>
           <div id="headerLinks">
               <Link to="/shop">Shop</Link>
-              <a href="">Profile</a>
-              <a href="">Settings</a>
               {name === "shop" ? (
-                <div>
-                  <div id="cart-items">{cart.length}</div>
-                  <button onClick={pay}>Pay Now</button>
-                </div>
+                <button onClick={pay}><span style={{color:"red"}}>{cart.length}</span> | Checkout</button>
               ) : null}
           </div>
       </div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import getAllProducts from "../fakestoreAPI"
+import "./Shop.css"
 
 export default function Shop({addItemFunc}){
     const [items, setItems] = useState([]);
@@ -8,15 +9,22 @@ export default function Shop({addItemFunc}){
         getAllProducts().then(products => setItems(products));
     },[])
 
-    if(items.length === 0) return (<p>Loading...</p>)
+    if(items.length === 0) return (<div style={{width:"100%",display:"flex",justifyContent:"center",alignItems:"center"}}><p className="loading">Loading...</p></div>)
 
     return(
-        <div>
+        <div id="productList">
             {
                 items.map(item => (
-                    <div key={item.title}>
-                        <p>{item.title}</p>
-                        <button onClick={()=>{addItemFunc(item.title)}}>Add to cart</button>
+                    <div className="card" key={item.title}>
+                        <img src={item.image} alt={item.title} />
+                        <div className="productInfo">
+                            <div>
+                                <p>{item.title}</p>
+                            </div>
+                            <div>
+                                <button onClick={()=>{addItemFunc(item.title)}}>Add to cart     |       ${item.price}</button>
+                            </div>
+                        </div>
                     </div>
                 ))
             }
