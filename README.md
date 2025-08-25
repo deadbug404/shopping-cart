@@ -5,5 +5,7 @@ A SPA(Single Page Application) for a mockup of an e commerce website that includ
 API Used:
 FakeStore - a free RESTful API for prototyping or testing e-commerce applications
 
+Preview Build:
+https://deadbug404shoppingcart.netlify.app/homepage
 
 
